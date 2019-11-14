@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arena_Fighter", "Arena_Fighter\Arena_Fighter.csproj", "{70F288E8-4F32-48F5-8470-8F637ACF4843}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest_Arena_Fighter", "XUnitTest_Arena_Fighter\XUnitTest_Arena_Fighter.csproj", "{9998D05E-F1E8-46D1-B84C-09F041B7CA7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70F288E8-4F32-48F5-8470-8F637ACF4843} = {70F288E8-4F32-48F5-8470-8F637ACF4843}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{70F288E8-4F32-48F5-8470-8F637ACF4843}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70F288E8-4F32-48F5-8470-8F637ACF4843}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70F288E8-4F32-48F5-8470-8F637ACF4843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9998D05E-F1E8-46D1-B84C-09F041B7CA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9998D05E-F1E8-46D1-B84C-09F041B7CA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9998D05E-F1E8-46D1-B84C-09F041B7CA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9998D05E-F1E8-46D1-B84C-09F041B7CA7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
