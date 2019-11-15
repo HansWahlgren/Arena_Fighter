@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Lexicon.CSharp.InfoGenerator;
 using Arena_Fighter.Data;
 
 
@@ -8,8 +9,10 @@ namespace Arena_Fighter.Model
 {
     public class Character
     {
+        static readonly InfoGenerator infoGen = new InfoGenerator(DateTime.Now.Millisecond);
         public readonly int characterId;
         public readonly string fullName;
+        public bool isAlive;
         public int healthpoints;
         public int strength;
         private string firstName;
@@ -26,7 +29,10 @@ namespace Arena_Fighter.Model
                 if (value.Length > 0 && value.Length < 60 && value != null)
                 {
                     firstName = value;
-                    // Implementera för nytt namn om tomt / null
+                }
+                else
+                {
+                    firstName = infoGen.NextFirstName();
                 }
             }
         }
@@ -42,20 +48,56 @@ namespace Arena_Fighter.Model
                 if (value.Length > 0 && value.Length < 60 && value != null)
                 {
                     lastName = value;
-                    // Implementera för nytt namn om tomt / null
+                    
+                }
+                else
+                {
+                    lastName = infoGen.NextLastName();
                 }
             }
         }
 
-        public Character(string firstName, string lastName)
+        public Character(int characterId, string firstName, string lastName)
         {
-            characterId = IdSequencer.NextId("character");
+            //    characterId = IdSequencer.NextId("character");
+            this.characterId = characterId;
+            isAlive = true;
             FirstName = firstName;
             LastName = lastName;
             fullName = $"{firstName} {lastName}";
             healthpoints = 20;
             strength = 1;
         }
-        // Ny constructor för npc
+        
+        public Character(int characterId)
+        {
+            this.characterId = characterId;
+            isAlive = true;
+            FirstName = "";
+            LastName = "";
+            fullName = $"{firstName} {lastName}";
+            healthpoints = 20;
+            strength = 1;
+        }
+        
+        /*
+        // Sequenced constructors
+        public Character()
+        {
+            isAlive = true;
+            FirstName = "";
+            LastName = "";
+            healthpoints = 20;
+            strength = 1;
+        }
+
+        public Character(int characterId, string firstName, string lastName)
+        : this() {
+            this.characterId = characterId;
+            FirstName = firstName;
+            LastName = lastName;
+            fullName = $"{firstName} {lastName}";
+        }
+        */
     }
 }
