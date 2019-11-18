@@ -18,10 +18,10 @@ namespace XUnitTest_Arena_Fighter
             testPlayer.strength += 8;
 
             //Act
-            new Round(testPlayer, testOpponent);
-            new Round(testPlayer, testOpponent);
-            Round thirdRound = new Round(testPlayer, testOpponent);
-            Round fourthRound = new Round(testPlayer, testOpponent);
+            new Round(IdSequencer.NextId("round"),testPlayer, testOpponent);
+            new Round(IdSequencer.NextId("round"),testPlayer, testOpponent);
+            Round thirdRound = new Round(IdSequencer.NextId("round"),testPlayer, testOpponent);
+            Round fourthRound = new Round(IdSequencer.NextId("round"),testPlayer, testOpponent);
 
             //Assert
             Assert.Equal(fourthRound.roundId -1, thirdRound.roundId);

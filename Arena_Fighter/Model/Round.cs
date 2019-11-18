@@ -9,8 +9,8 @@ namespace Arena_Fighter.Model
     {
         static readonly Random random = new Random();
         public readonly int roundId;
-        public Character playerCharacter;
-        public Character opponentCharacter;
+        private Character playerCharacter;
+        private Character opponentCharacter;
         public readonly int playerDieRoll;
         public readonly int opponentDieRoll;
         public readonly int playerStr;
@@ -18,9 +18,10 @@ namespace Arena_Fighter.Model
 
         public int DamageDealt { get; private set; }
 
-        public Round(Character playerCharacter, Character opponentCharacter)
+        public Round(int roundId, Character playerCharacter, Character opponentCharacter)
         {
-            roundId = IdSequencer.NextId("round");
+            //Character = from character array // or battle
+            this.roundId = roundId;
             this.playerCharacter = playerCharacter;
             this.opponentCharacter = opponentCharacter;
             playerDieRoll = random.Next(1, 6);

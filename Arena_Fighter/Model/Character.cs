@@ -56,48 +56,24 @@ namespace Arena_Fighter.Model
                 }
             }
         }
-
-        public Character(int characterId, string firstName, string lastName)
-        {
-            //    characterId = IdSequencer.NextId("character");
-            this.characterId = characterId;
-            isAlive = true;
-            FirstName = firstName;
-            LastName = lastName;
-            fullName = $"{firstName} {lastName}";
-            healthpoints = 20;
-            strength = 1;
-        }
         
         public Character(int characterId)
         {
             this.characterId = characterId;
             isAlive = true;
+            healthpoints = 20;
+            strength = 1;
             FirstName = "";
             LastName = "";
             fullName = $"{firstName} {lastName}";
-            healthpoints = 20;
-            strength = 1;
-        }
-        
-        /*
-        // Sequenced constructors
-        public Character()
-        {
-            isAlive = true;
-            FirstName = "";
-            LastName = "";
-            healthpoints = 20;
-            strength = 1;
         }
 
         public Character(int characterId, string firstName, string lastName)
-        : this() {
-            this.characterId = characterId;
+        : this(characterId) {
             FirstName = firstName;
             LastName = lastName;
             fullName = $"{firstName} {lastName}";
         }
-        */
+        
     }
 }
